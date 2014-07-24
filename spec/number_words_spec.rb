@@ -23,8 +23,23 @@ end
 
 describe('high_numbers') do
 
-  it('takes a single digit number and returns it in words')do
-    high_numbers(6000).should(eq("six thousand"))
+  it('takes a number and returns it in words')do
+    high_numbers(6000).should(eq("six thousand "))
   end
 
+  it('takes a number and returns it in words')do
+      high_numbers(6001).should(eq("six thousand one"))
+  end
+  it('takes a number and returns it in words')do
+    high_numbers(64321).should(eq("sixty four thousand three hundred twenty one"))
+  end
+  it('takes a number and returns it in words')do
+    high_numbers(6432100).should(eq("six million four hundred thirty two thousand one hundred"))
+  end
+  it('takes a number and returns it in words')do
+    high_numbers(123070006001).should(eq("one hundred twenty three billion seventy million six thousand one"))
+  end
+  it('takes a number and returns it in words')do
+    high_numbers(1000000000000).should(eq("One Trillion!"))
+  end
 end
