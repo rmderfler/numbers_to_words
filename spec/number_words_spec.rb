@@ -42,4 +42,7 @@ describe('high_numbers') do
   it('takes a number and returns it in words')do
     high_numbers(1000000000000).should(eq("One Trillion!"))
   end
+  it('takes a number and returns it in words')do
+    high_numbers(12000000000).should(eq("twelve billion "))
+  end
 end

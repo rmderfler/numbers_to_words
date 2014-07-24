@@ -52,7 +52,11 @@ def millions (number)
   millions_num = number / 10**6
   result = num_words(millions_num)
   number = number - 10**6*millions_num
-  millions_result = result + " million " + thousands(number)
+  if result == ""
+    thousands_result = result + thousands(number)
+  else
+    millions_result = result + " million " + thousands(number)
+  end
 end
 
 def thousands (number)
@@ -61,7 +65,11 @@ def thousands (number)
   result = num_words(new_num)
   number = number - 1000*new_num
   second_result = num_words(number)
-  result = result + " thousand " + second_result
+  if result == ""
+    result = second_result
+  else
+    result = result + " thousand " + second_result
+  end
   result
 end
-puts high_numbers(1000000000)
+puts high_numbers(12000000000)
